@@ -115,9 +115,66 @@ fxn bfsRecursive(queue,list) {
 }
 ```
 
+### dfs()
 ```
-```
+=> 3 ways to implement dfs:
+    => in-order, pre-order, post-order
+        => PreOrder is useful for recreating the tree;
 
+=> Most of the time, its better to use recursion for this!
+
+fxn dfsInOrder() {
+    return traverseInOrder()
+}
+
+fxn dfsPreOrder() {
+    return traversePreOrder()
+}
+
+fxn dfsPostOrder() {
+    return traversePostOrder()
+}
+
+fxn traverseInOrder(node, list) {
+    if (node.left) {
+        traverseInOrder(node.left, list)
+    }
+    list.push(node.val)
+    if (node.right) {
+        traverseInOrder(node.right, list)
+    }
+    return list;
+}
+
+fxn traversePreOrder(node, list) {
+    list.push(node.val)
+    if (node.left) {
+        traverseInOrder(node.left, list)
+    }
+    if (node.right) {
+        traverseInOrder(node.right, list)
+    }
+    return list;
+}
+
+fxn traversePostOrder(node, list) {
+    if (node.left) {
+        traverseInOrder(node.left, list)
+    }
+    if (node.right) {
+        traverseInOrder(node.right, list)
+    }
+    list.push(node.val)
+    return list;
+}
+
+Note:
+=> The return statements in JavaScript functions inherently handle the process of "going back up" the recursive call stack.
+=> When the function calls itself to traverse the left or right subtree, it doesn't immediately forget about the current execution context.
+=> Instead, each recursive call creates a new instance of the function with its own set of local variables and parameters.
+=> These instances are stacked on top of each other in what's known as the "call stack."
+```
+### Graph Traversals
 ```
 ```
 
