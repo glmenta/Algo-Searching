@@ -100,6 +100,19 @@ fxn BFS() {
     }
     return list;
 }
+
+fxn bfsRecursive(queue,list) {
+    if (!queue.length) return list;
+    let curr = this.queue.shift();
+    list.push(curr.val)
+        if (curr.left) {
+            queue.push(curr.left)
+        }
+        if (curr.right) {
+            queue.push(curr.right)
+        }
+    return bfsRecursive(queue,list)
+}
 ```
 
 ```
