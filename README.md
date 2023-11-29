@@ -56,7 +56,7 @@ Ex: [1,4,6,9,12,34,45]
     => Pros: Less memory, does path exist?
     => Con: can be slow
 => if we know the location of node and its closer to root, best to use BFS
-=> DFS is good if we dont know the location yet
+=> DFS is good if we dont know the location yet (check if it exists)
 ```
 
 ### When to use BFS VS DFS
@@ -178,5 +178,19 @@ Note:
 ```
 ```
 
+### BFS and DFS in Graphs
 ```
+=>BFS
+    => Recommendations
+        => Convert graph into a tree; we know information such as children
+        => Helps us find shortest path/know which node is a neighbor
+
+=> DFS
+    => Maze solving; find deepest and backtrack until we find best route/exit;
+    => Does path exist?
+
+=> BFS assumes that each jump/path from 1 node to another is the same "weight" for that edge
+    => distance between two nodes
+
+=> Bellman and Dijkstra => best for shortest path problem
 ```
